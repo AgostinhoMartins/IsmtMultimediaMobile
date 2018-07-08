@@ -1,7 +1,6 @@
 # IsmtMultimediaMobile
-Autor do Site:
 
-Nome: Agostinho Martins
+Autor da Aplicação: AGOSTINHO MARTINS
 
 email: agostinhomt@gmail.com
 

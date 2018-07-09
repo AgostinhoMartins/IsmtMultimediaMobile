@@ -1,10 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+<!-- projeto inspirado no MasterDetailPage do youtuber Jose Carlos Macoratti
+mo no youtube https://www.youtube.com/watch?v=HIT1LoPgurk&t=959s -->
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:local="clr-namespace:IsmtMultimediaMobile" 
              x:Class="IsmtMultimediaMobile.MainPage">
-    <StackLayout>
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" BackgroundColor="#e8e8e8">
+            <StackLayout Orientation="Vertical">
+                <StackLayout BackgroundColor="#e74c3c" HeightRequest="75">
+                        <Label Text="Home Page" FontSize="20"
+                           VerticalOptions="CenterAndExpand"
+                           TextColor="White"
+                           HorizontalOptions="Center"/>
+                </StackLayout>
+                <ListView x:Name="navigationDrawerList" RowHeight="60"
+                          SeparatorVisibility="None" BackgroundColor="#e8e8e8"
+                          ItemSelected="OnMenuItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout VerticalOptions="FillAndExpand"
+                                             Orientation="Horizontal"
+                                             Padding="20,10,0,10" Spacing="20">
+                                        
+                                             <Image Source="{Binding Icon}"
+                                                    WidthRequest="40" HeightRequest="40"
+                                                    VerticalOptions="Center" />
+                                             <Label Text="{Binding Title}"
+                                                       FontSize="Medium"
+                                                       VerticalOptions="Center"
+                                                       TextColor="Black"/>
+                                   </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                </ListView>
+                </StackLayout>
+                
         <!-- Place new controls here -->
-        <Label Text="ISMT Multimedia Mobile" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+
 </ContentPage>
+        
+        </MasterDetailPage.Master>
+            
+        <MasterDetailPage.Detail>
+            <ContentPage />
+         </MasterDetailPage.Detail>
+        </MasterDetailPage>
